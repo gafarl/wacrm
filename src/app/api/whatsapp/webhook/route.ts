@@ -159,6 +159,14 @@ export async function GET(request: Request) {
       )
     }
 
+    const envVerifyToken = process.env.WHATSAPP_VERIFY_TOKEN || 'wacrm-secret-2026'
+    if (envVerifyToken && verifyTokenMatches(envVerifyToken, verifyToken)) {
+      return new Response(challenge, {
+        status: 200,
+        headers: { 'Content-Type': 'text/plain' },
+      })
+    }
+
     // Fetch all whatsapp configs to check verify tokens
     const { data: configs, error: configError } = await supabaseAdmin()
       .from('whatsapp_config')
