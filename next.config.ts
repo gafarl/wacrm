@@ -87,8 +87,8 @@ const nextConfig: NextConfig = {
       process.env.NEXT_PUBLIC_APP_URL || "https://crm.gujaratbio.com",
   },
   experimental: {
+    turbopackPluginRuntimeStrategy: "workerThreads",
     cpus: 2,
-    workerThreads: false,
   },
   // Stop `next dev` from overwriting the repo's hand-written AGENTS.md.
   agentRules: false,

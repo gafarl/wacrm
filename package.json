@@ -30,7 +30,7 @@
   "packageManager": "npm@10.9.9",
   "scripts": {
     "dev": "next dev",
-    "build": "TOKIO_WORKER_THREADS=2 RAYON_NUM_THREADS=2 UV_THREADPOOL_SIZE=2 next build",
+    "build": "TOKIO_WORKER_THREADS=4 RAYON_NUM_THREADS=4 next build",
     "start": "next start",
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
