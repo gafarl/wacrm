@@ -77,8 +77,18 @@ const nextConfig: NextConfig = {
   // Docker image can run without node_modules or the Next CLI.
   // Harmless outside Docker: `next start` keeps working as before.
   output: "standalone",
+  env: {
+    NEXT_PUBLIC_SUPABASE_URL:
+      process.env.NEXT_PUBLIC_SUPABASE_URL || "https://nktgsrhziimppsmjlvrz.supabase.co",
+    NEXT_PUBLIC_SUPABASE_ANON_KEY:
+      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ||
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5rdGdzcmh6aWltcHBzbWpsdnJ6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTMyMDI1NjIsImV4cCI6MjEwODc3ODU2Mn0.owXd2HgeMQMJQEnTFLoGcsIiGC3isyUSuyig3kCqFXA",
+    NEXT_PUBLIC_APP_URL:
+      process.env.NEXT_PUBLIC_APP_URL || "https://crm.gujaratbio.com",
+  },
   experimental: {
-    turbopackPluginRuntimeStrategy: "workerThreads",
+    cpus: 2,
+    workerThreads: false,
   },
   // Stop `next dev` from overwriting the repo's hand-written AGENTS.md.
   agentRules: false,
