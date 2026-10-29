@@ -83,8 +83,28 @@ const nextConfig: NextConfig = {
     NEXT_PUBLIC_SUPABASE_ANON_KEY:
       process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ||
       "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5rdGdzcmh6aWltcHBzbWpsdnJ6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTMyMDI1NjIsImV4cCI6MjEwODc3ODU2Mn0.owXd2HgeMQMJQEnTFLoGcsIiGC3isyUSuyig3kCqFXA",
-    NEXT_PUBLIC_APP_URL:
-      process.env.NEXT_PUBLIC_APP_URL || "https://crm.gujaratbio.com",
+    SUPABASE_SERVICE_ROLE_KEY:
+      process.env.SUPABASE_SERVICE_ROLE_KEY ||
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5rdGdzcmh6aWltcHBzbWpsdnJ6Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc5MzIwMjU2MiwiZXhwIjoyMTA4Nzc4NTYyfQ.zwdwKCz-DaC4Hc_XWRcZnqIVje09ZMYJuTxBtRH5GT0",
+    ENCRYPTION_KEY:
+      process.env.ENCRYPTION_KEY ||
+      process.env.WACRM_ENCRYPTION_KEY ||
+      "1b5d76f11a1f1aaeb36ceb52ff3ceaa5ec28ee0843facd170328cfd60b7a4488",
+    META_APP_SECRET:
+      process.env.META_APP_SECRET ||
+      process.env.WHATSAPP_APP_SECRET ||
+      "b0585ba0269b041bd83a4af8e5b53e21",
+    META_APP_ID:
+      process.env.META_APP_ID || "591902940025632",
+    WHATSAPP_VERIFY_TOKEN:
+      process.env.WHATSAPP_VERIFY_TOKEN || "wacrm-secret-2026",
+    AUTOMATION_CRON_SECRET:
+      process.env.AUTOMATION_CRON_SECRET ||
+      "98ff1cb708de0b1333c176542e4b9a04f7fc41c27c96ca255f3fff8926f320ee",
+    NEXT_PUBLIC_SITE_URL:
+      process.env.NEXT_PUBLIC_SITE_URL ||
+      process.env.NEXT_PUBLIC_APP_URL ||
+      "https://crm.gujaratbio.com",
   },
   experimental: {
     turbopackPluginRuntimeStrategy: "workerThreads",
